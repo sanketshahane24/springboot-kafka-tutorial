@@ -1,0 +1,30 @@
+kafka architecture
+
+high level:
+	producer -->> kafka server -->> Consumer
+
+kafka server
+	- kafka broker
+	- topic (like database to store data)
+		- partition (divide data in partition)
+		
+-dependancies:
+	-Zookeeper : for distribution of kafka server and brokers, it is used for managing the state of kafka brokers.
+	
+	
+process:
+- download zookeeper service
+- install kafka and start the server
+- create spring boot project add spring kafka dependancy.
+- add relevant properties in application.properties (around 8 properties)
+	-consumer.bootstrap-server
+	-consumer.group
+	-auto-offset-reset
+	-key-deserialisation
+	-value-deserialisation
+	-producer.bootstrap-server
+	-key-serialisation
+	-value-serialisation
+- create config and create a new topic for our application.
+- create a producer (@service) to send a message to kafka server using topic name.
+- create a consumer write down the kafka listener method for getting messages.
